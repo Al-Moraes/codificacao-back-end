@@ -1,57 +1,28 @@
-Aula 02 — Módulos CommonJS e ESM
+# 📋 Sistema de Logs
 
-Projeto desenvolvido para praticar o uso de módulos ES Modules (ESM) no Node.js, trabalhando também com módulos nativos para criação e manipulação de arquivos.
+Sistema simples de registro e armazenamento de logs utilizando **Node.js**.
 
-📚 Conteúdos praticados
-Utilização de import e export
-Configuração do "type": "module" no package.json
-Utilização do módulo fs/promises
-Utilização do módulo path
-Utilização do módulo url
-Operações assíncronas com async/await
-Tratamento de erros com try/catch
-Criação de arquivos e diretórios
-Registro de logs com data e hora
-⚙️ Funcionamento
+## 🚀 Sobre o Projeto
 
-O projeto possui uma função responsável por formatar as mensagens de log, adicionando a data e o horário atual:
+Este projeto implementa uma função responsável por registrar mensagens de log em um arquivo `system.log`.
 
-export function formatLog(mensagem) {
-    const dataAtual = new Date().toISOString().split('T')[0];
-    const horaAtual = new Date().toLocaleTimeString();
+O sistema cria automaticamente a pasta `logs` caso ela ainda não exista e adiciona os registros ao arquivo sem sobrescrever os logs anteriores.
 
-    return `[${dataAtual} ${horaAtual}] - ${mensagem}`;
-}
+## 🛠️ Tecnologias Utilizadas
 
+- **Node.js**
+- **JavaScript**
+- **ES Modules**
+- **fs/promises**
+- **path**
+- **url**
 
-A função salvarLogSystem() cria automaticamente a pasta logs, caso ela ainda não exista, e adiciona as mensagens ao arquivo system.log.
+## 📂 Estrutura do Projeto
 
-logs/
-└── system.log
-
-📁 Estrutura do projeto
-aula02-modulos-commonjs-esm/
-├── index.js
+```text
+projeto/
+├── logs/
+│   └── system.log
 ├── utils.js
-├── package.json
-└── logs/
-    └── system.log
-
-🚀 Como executar
-
-Clone o projeto ou baixe os arquivos e execute:
-
-node index.js
-
-
-Após a execução, as mensagens serão registradas no arquivo:
-
-logs/system.log
-
-📝 Exemplo de log
-[2026-09-11 16:35:20] - Inicialização do Servidor Concluído!
-[2026-09-11 16:35:20] - Conexão com o Banco de Dados Estabelecida!
-
-🎯 Objetivo
-
-O objetivo deste exercício é compreender como funciona a organização de código utilizando ES Modules no Node.js, além de praticar operações de arquivos e diretórios de forma assíncrona.
+├── index.js
+└── README.md
